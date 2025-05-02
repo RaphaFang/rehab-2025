@@ -1,10 +1,10 @@
-class Solution {
+class Solution_1 {
     static String removeExclamationMarks(String s) {
         return s.replace("!", "");
     }
 }
 
-class Solution {
+class Solution_2 {
     static String removeExclamationMarks(String s) {
         return s.replaceAll("!", "");
     }
