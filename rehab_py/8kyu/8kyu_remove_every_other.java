@@ -25,7 +25,7 @@ class Kata_optimized {
 
 // !1. optimized
 // 要基於java的資料結構
-// Object[] 比 List<Object> 快，但是必須一次性寫死[]內部有的元件數量
+// Object[] 比 List<Object> 快，但是必須一次性寫死[]內部有的元件數量，會變null存在裡面
 // List 可以用 .add()
 // Object[] 只能用 arr[i]= x
 // 但是List底層仍然是Object，List會設定一個政列數量，不夠用時會自動複製
