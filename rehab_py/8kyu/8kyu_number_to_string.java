@@ -5,6 +5,10 @@ class number_to_string {
     }
 }
 
+// ""+num
+// 語法糖，但是效率更差，實際上是做了
+// new StringBuilder().append("").append(num).toString();
+
 // ----------------------------------------------------------------------------
 // ! String.valueOf(num)
 // ! Integer.toString(num)
