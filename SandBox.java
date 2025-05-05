@@ -1,36 +1,47 @@
-public class SandBox {
+class SandBox {
     // original
-    public static int original(int[] arr) {
-        int rn = 0;
-        for (int s : arr) {
-            if (s > 0) {
-                rn += s;
-            }
+    static String original(final int repeat, final String string) {
+        String[] arr = new String[repeat];
+        for (int i = 0; i < repeat; i++) {
+            arr[i] = string;
         }
-        return rn;
+        return String.join("", arr);
     }
 
-    // optimized
-    public static int optimized(int[] arr) {
-        int sum = 0;
-        for (int num : arr)
-            sum += num > 0 ? num : 0;
-        return sum;
+    // optimized_1
+    static String optimized_1(final int repeat, final String string) {
+        StringBuilder arr = new StringBuilder();
+        for (int i = 0; i < repeat; i++) {
+            arr.append(string);
+        }
+        return arr.toString();
+    }
+
+    // optimized_2
+    static String optimized_2(int repeat, String string) {
+        return string.repeat(repeat);
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int repeat = 1000;
+        String string = "hello";
 
         long start1 = System.nanoTime();
-        int result1 = original(arr);
+        String result1 = original(repeat, string);
         long end1 = System.nanoTime();
         long duration1 = (end1 - start1);
         System.out.println("Ori ver.: " + duration1 / 1_000_000.0 + " ms");
 
         long start2 = System.nanoTime();
-        int result2 = optimized(arr);
+        String result2 = optimized_1(repeat, string);
         long end2 = System.nanoTime();
         long duration2 = (end2 - start2);
-        System.out.println("Opt ver.: " + duration2 / 1_000_000.0 + " ms");
+        System.out.println("Opt_1 ver.: " + duration2 / 1_000_000.0 + " ms");
+
+        long start3 = System.nanoTime();
+        String result3 = optimized_2(repeat, string);
+        long end3 = System.nanoTime();
+        long duration3 = (end3 - start3);
+        System.out.println("Opt_2 ver.: " + duration3 / 1_000_000.0 + " ms");
     }
 }
