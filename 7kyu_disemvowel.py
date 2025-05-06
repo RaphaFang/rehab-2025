@@ -6,9 +6,10 @@ def disemvowel(s):
         s = s.replace(i,'')
     return s
 
-# def disemvowel(string):
-#     return string.translate(None, 'aAeEuUoOiI')
-
+table = str.maketrans('', '', 'aeiouAEIOU')
+def disemvowel_3_opt():
+    string = "No offense but,\nYour writing is among the worst I've ever read"*100
+    return string.translate(table)
 
 # ---------------------------------------------------
 # !匿名set
@@ -45,6 +46,17 @@ def disemvowel(s):
 # | 批次替換多個字串 | ❌ 要自己設計表格／拆解        | ✅ 可多次 replace() 或用 `re.sub()` |
 
 
+
+# 查找行為有一點點不同
+# dict[key]：
+# 對 key 做 hash() → 找到槽位（bucket）
+# 只需比對 key
+# 查到 key → 直接回傳 value，不再看值
+
+# key in set：
+# 對 key 做 hash() → 找到槽位
+# 比對 key → 還要確認 value 是 None（或 set 的特殊處理）
+# 雖然兩者理論上相同，但因為 set 是 dict 的子集，多了一層封裝與邏輯判斷
 # ---------------------------------------------------
 
 vowels = {"a","e","i","o","u","A","E","I","O","U"}
