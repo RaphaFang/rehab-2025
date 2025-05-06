@@ -26,15 +26,15 @@ class Troll {
 // 換成replace，Ori
 // 10000
 // Ori ver.: 27.730347 ms
-// Opt_1 ver.: 39.371619 ms
+// replace ver.: 39.371619 ms
 
 // 1000
 // Ori ver.: 10.497815 ms
-// Opt_1 ver.: 6.994207 ms
+// replace ver.: 6.994207 ms
 
 // 100
 // Ori ver.: 2.469973 ms
-// Opt_1 ver.: 1.447031 ms
+// replace ver.: 1.447031 ms
 
 // ! hashtable
 // java9之後可以這樣寫： Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u', 'A',
