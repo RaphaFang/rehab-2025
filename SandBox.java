@@ -1,27 +1,27 @@
-import java.util.Arrays;
-import java.util.List;
+import static java.util.Arrays.stream;
 
 class SandBox {
     // original
-    static String original(String str) {
-        List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E',
-                'I', 'O', 'U');
-        StringBuilder result = new StringBuilder();
-        for (char c : str.toCharArray()) {
-            if (!vowels.contains(c)) {
-                result.append(c);
-            }
+    public static String original(String numbers) {
+        String[] strNum = numbers.split(" ");
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (String n : strNum) {
+            int nn = Integer.parseInt(n);
+            max = (nn > max) ? nn : max;
+            min = (nn < min) ? nn : min;
         }
-        return result.toString();
+        return max + " " + min;
     }
 
     // optimized_1
-    static String optimized_1(String str) {
-        List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
-        for (char c : vowels) {
-            str = str.replace(String.valueOf(c), "");
-        }
-        return str;
+
+    static String optimized_1(String numbers) {
+        var stats = stream(numbers.split(" "))
+                .mapToInt(Integer::parseInt)
+                .summaryStatistics();
+        return stats.getMax() + " " + stats.getMin();
     }
 
     // optimized_2
@@ -39,16 +39,16 @@ class SandBox {
 
     public static void main(String[] args) {
         // int repeat = 1000;
-        String str = "No offense but,\nYour writing is among the worst I've ever read".repeat(100);
+        String numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4".repeat(100);
 
         long start1 = System.nanoTime();
-        String result1 = original(str);
+        String result1 = original(numbers);
         long end1 = System.nanoTime();
         long duration1 = (end1 - start1);
         System.out.println("Ori ver.: " + duration1 / 1_000_000.0 + " ms");
 
         long start2 = System.nanoTime();
-        String result2 = optimized_1(str);
+        String result2 = optimized_1(numbers);
         long end2 = System.nanoTime();
         long duration2 = (end2 - start2);
         System.out.println("Opt_1 ver.: " + duration2 / 1_000_000.0 + " ms");
