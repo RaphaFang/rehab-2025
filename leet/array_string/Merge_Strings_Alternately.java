@@ -1,3 +1,5 @@
+package leet.array_string;
+
 class Merge_Strings_Alternately {
     public String mergeAlternately(String word1, String word2) {
         int len1 = word1.length(), len2 = word2.length();
