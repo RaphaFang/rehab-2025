@@ -5,7 +5,7 @@ class SandBox {
     public static String original(String numbers) {
         String[] strNum = numbers.split(" ");
 
-        int max = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE; // 這可以給出系統能計算的最小數字
         int min = Integer.MAX_VALUE;
         for (String n : strNum) {
             int nn = Integer.parseInt(n);
