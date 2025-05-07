@@ -16,15 +16,14 @@ def create_box_for():
 # ! 所以邊界的就是0，（但是我們把全部都加上1）
 import numpy as np
 
-def create_box_numpy():
-    m,n = 5,9
+def create_box_numpy(m,n):
     x = np.arange(m).reshape(1, m)  # 當作X軸
     y = np.arange(n).reshape(n, 1)  # 當作Y軸，接著整個圖在右下方
 
     box = np.minimum(x+1, m-x)
     box = np.minimum(box, y+1)
     box = np.minimum(box, n-y)
-    print(box)
+    return box
     # return (box + 1).tolist() # 不能直接回傳，numpy出來的是numpy_array 不同於 list_of_lists
 
 
