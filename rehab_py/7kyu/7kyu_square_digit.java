@@ -41,3 +41,10 @@ class SquareDigit {
 // ! StringBuilder[] sb = new StringBuilder[digits.length];
 // 這建立出來會是「只能」塞StringBuilder物件的list
 // 沒辦法 sb.append(num * num)
+
+// StringBuilder 是用來「頻繁修改字串」時的最佳解
+// 常見用途（效能導向）：
+// 場景 為什麼用 StringBuilder？
+// 頻繁 append 多段文字 不會產生太多中間 String 物件（效能優）
+// 字串拼接迴圈（ex: for 中組字串） + 每次都會建立新 String，很慢
+// Web Log、HTML 組合 大量字串拼接，不適合用 +
