@@ -1,27 +1,32 @@
-import static java.util.Arrays.stream;
+import java.util.ArrayList;
+import java.util.List;
 
 class SandBox {
     // original
-    public static String original(String numbers) {
-        String[] strNum = numbers.split(" ");
-
-        int max = Integer.MIN_VALUE; // 這可以給出系統能計算的最小數字
-        int min = Integer.MAX_VALUE;
-        for (String n : strNum) {
-            int nn = Integer.parseInt(n);
-            max = (nn > max) ? nn : max;
-            min = (nn < min) ? nn : min;
+    public static int original(int n) {
+        char[] digits = String.valueOf(n).toCharArray();
+        String[] arr = new String[digits.length];
+        for (int i = 0; i < digits.length; i++) {
+            int num = digits[i] - '0';
+            arr[i] = String.valueOf(num * num);
         }
-        return max + " " + min;
+        // String result = ;
+        return Integer.parseInt(String.join("", arr));
     }
 
     // optimized_1
 
-    static String optimized_1(String numbers) {
-        var stats = stream(numbers.split(" "))
-                .mapToInt(Integer::parseInt)
-                .summaryStatistics();
-        return stats.getMax() + " " + stats.getMin();
+    public static int optimized_1(int n) {
+        if (n == 0)
+            return 0;
+        List<String> list = new ArrayList<>();
+
+        while (n > 0) {
+            int num = n % 10;
+            list.add(0, String.valueOf(num * num)); // 倒著，加到最前面
+            n /= 10; // 這是砍掉一個位數
+        }
+        return Integer.parseInt(String.join("", list));
     }
 
     // optimized_2
@@ -38,17 +43,17 @@ class SandBox {
     // }
 
     public static void main(String[] args) {
-        // int repeat = 1000;
-        String numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4".repeat(100);
+        int n = 9999;
+        // String numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4".repeat(100);
 
         long start1 = System.nanoTime();
-        String result1 = original(numbers);
+        int result1 = original(n);
         long end1 = System.nanoTime();
         long duration1 = (end1 - start1);
         System.out.println("Ori ver.: " + duration1 / 1_000_000.0 + " ms");
 
         long start2 = System.nanoTime();
-        String result2 = optimized_1(numbers);
+        int result2 = optimized_1(n);
         long end2 = System.nanoTime();
         long duration2 = (end2 - start2);
         System.out.println("Opt_1 ver.: " + duration2 / 1_000_000.0 + " ms");
