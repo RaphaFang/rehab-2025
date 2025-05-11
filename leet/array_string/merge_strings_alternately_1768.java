@@ -1,6 +1,6 @@
 package leet.array_string;
 
-class Merge_Strings_Alternately {
+class merge_strings_alternately_1768 {
     public String mergeAlternately(String word1, String word2) {
         int len1 = word1.length(), len2 = word2.length();
         int maxLen = Math.max(len1, len2);
