@@ -38,7 +38,7 @@ class Solution:
 
 aa = Solution()
 aa.reverseVowels("Ui")
-# --------
+# --------------------------------------------------------
 
 #! 1. 11ms(沒有replace)
         #         v_list.append(i)
