@@ -17,3 +17,4 @@ aa.moveZeroes([0,1,0,3,12])
 
 # c_list.pop(i) 
 # 不能直接在複製的list推掉東西，會修改到這複製品的長度
+# ! 這邊也可以用two pointer作

@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 class Solution {
     public void moveZeroes(int[] nums) {
         int dot = 0;
@@ -9,7 +6,7 @@ class Solution {
                 nums[dot] = i;
                 dot++;
             }
-        }
+        } // 這邊的機制真的太聰明，0開頭，或是非0開頭都可以處理
         while (dot < nums.length) {
             nums[dot] = 0;
             dot++;
