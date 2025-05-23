@@ -6,7 +6,7 @@ class Solution:
     # 未來嘗試先畫圖，有圖片後的思緒更清晰
     # 原本還有想說用two pointer
     def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
-        return [[list(set(nums1)-set(nums2))],[list(set(nums1)-set(nums2))]]
+        return [list(set(nums1)-set(nums2)),list(set(nums2)-set(nums1))]
 
     # ------------------------------------------------------------------------
     # 要有排序才可以推動elif區塊，另一機制推動前進
