@@ -16,6 +16,8 @@ class Solution {
         // 因為這邊出來的東西要是List<List<Integer>>，所以要轉換hash
     }
 }
+
+//
 // -----------------------------------------------------------------------------
 // ! removeAll()
 // removeAll() 的回傳值是 boolean → 表示「有沒有成功移除任何元素」
@@ -43,9 +45,6 @@ class Solution {
 // Set<Integer> diff2 = new HashSet<>(set2);
 // diff2.removeAll(set1);
 
-// List<List<Integer>> result = new ArrayList<>();
-// result.add(new ArrayList<>(diff1));
-// result.add(new ArrayList<>(diff2));
-// return result;
+// return List.of(new ArrayList<>(diff1), new ArrayList<>(diff2));
 // }
 // }
