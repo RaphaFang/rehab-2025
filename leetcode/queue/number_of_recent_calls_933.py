@@ -3,7 +3,7 @@ class RecentCounter:
     # ! 題目真正要問的是多次計算後，這個list其實不用存放這麼多資料，這時要怎麼丟垃圾？
     # 不必紀錄完整的list，而是超過3000的資料就丟棄
     # ------------------------------------------
-    # 33ms
+    # 33ms O(1)
     # ! 兩者差異在於deque可以更快的迭代list，而pop需要把東西全部搬移
     def __init__(self):
         self.start = deque
@@ -11,7 +11,7 @@ class RecentCounter:
 
     def ping(self, t:int) -> int:
         self.start.append(t)
-        while self.start[0] <t-3000:
+        while self.start[0] <t-3000: # 這邊不用檢查為空，因為一定會有至少他自己在裡面
             self.start.popleft()
         return len(self.start)
     
