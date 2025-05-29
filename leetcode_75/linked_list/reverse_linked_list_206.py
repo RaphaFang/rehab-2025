@@ -11,7 +11,7 @@ class Solution(object):
         while current:
             node_holder = current.next
             current.next = backward # 修改掉current的下一對象
-            backward = current # 編寫backward
+            backward = current # backward 前往下一位，但都會比current慢一格
             current = node_holder
 
         return backward
