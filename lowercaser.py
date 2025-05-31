@@ -1,5 +1,5 @@
 def lowercaser(item, quize_id):
-    print(item.lower().replace(" ", "_") + "_" + str(quize_id))
+    print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
 lowercaser("Customer Who Visited but Did Not Make Any Transactions", 1581)
