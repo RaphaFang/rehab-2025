@@ -2,7 +2,7 @@ def lowercaser(item, quize_id):
     print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
-lowercaser("Calculate Special Bonus", 1873)
+lowercaser("Fix Names in a Table", 1667)
 
 
 # ----------------------------------------------------------------------------
