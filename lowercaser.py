@@ -2,7 +2,7 @@ def lowercaser(item, quize_id):
     print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
-lowercaser("Patients With a Condition", 1527)
+lowercaser("Count Occurrences in Text", 2738)
 
 
 # ----------------------------------------------------------------------------
