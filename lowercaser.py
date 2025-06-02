@@ -2,7 +2,7 @@ def lowercaser(item, quize_id):
     print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
-lowercaser("Basic Aggregate Functions", 620)
+lowercaser("Data Manipulation", 196)
 
 
 # ----------------------------------------------------------------------------
