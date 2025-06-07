@@ -2,7 +2,7 @@ def lowercaser(item, quize_id):
     print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
-lowercaser("Find Total Time Spent by Each Employee", 1741)
+lowercaser("Guess Number Higher or Lower", 374)
 
 
 # ----------------------------------------------------------------------------
