@@ -2,7 +2,7 @@ def lowercaser(item, quize_id):
     print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
-lowercaser("N-th Tribonacci Number", 1137)
+lowercaser("Queries Quality and Percentage", 1211)
 
 
 # ----------------------------------------------------------------------------
