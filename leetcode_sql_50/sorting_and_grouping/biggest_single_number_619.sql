@@ -6,3 +6,5 @@ SELECT COALESCE((
     ORDER BY num DESC
     LIMIT 1
 ), NULL) as result;
+
+-- 重點，沒有辦法直接的標示出 NULL，要透過這方式強調標示
