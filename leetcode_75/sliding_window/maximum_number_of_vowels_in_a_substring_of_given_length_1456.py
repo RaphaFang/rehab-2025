@@ -16,6 +16,8 @@ class Solution:
                 temp += 1
 
             m_vowel = max(m_vowel, temp)
+            if m_vowel == k:
+                return m_vowel
         return m_vowel
 # ------------------------------------------------------------
 # 這超時了
