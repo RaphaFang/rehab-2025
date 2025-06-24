@@ -2,7 +2,7 @@ def lowercaser(item, quize_id):
     print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
         
 
-lowercaser("Daily Leads and Partners", 1693)
+lowercaser("Triangle Judgement", 610)
 
 
 # ----------------------------------------------------------------------------
