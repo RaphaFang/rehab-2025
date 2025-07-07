@@ -1,8 +1,11 @@
 def lowercaser(item, quize_id):
-    print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
+    # the title name need more switching, and replace() only detect and change one item each time
+    # print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
+    r = str.maketrans({" ": "_", "'": ""})
+    print(item.translate(r) + "_" + str(quize_id) + ".")
         
-
-lowercaser("Actors and Directors Who Cooperated At Least Three Times", 1050)
+if __name__ == "__main__":
+    lowercaser("Longest Subarray of 1's After Deleting One Element", 1493)
 
 
 # ----------------------------------------------------------------------------
