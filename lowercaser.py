@@ -5,7 +5,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Longest Subarray of 1's After Deleting One Element", 1493)
+    lowercaser("Determine if Two Strings Are Close", 1657)
 
 
 # ----------------------------------------------------------------------------
