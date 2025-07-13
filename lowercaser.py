@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Advanced String Functions / Regex / Clause", 1667)
+    lowercaser("Patients With a Condition", 1527)
 
 
 # ----------------------------------------------------------------------------
