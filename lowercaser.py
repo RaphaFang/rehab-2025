@@ -2,12 +2,13 @@ def lowercaser(item, quize_id):
     # the title name need more switching, and replace() only detect and change one item each time
     # print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
     r = str.maketrans({
-        " ": "_",
-        "'": ""})
+        " " : "_",
+        "'" : "",
+        "/" : "_"})
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Consecutive Numbers", 180)
+    lowercaser("Advanced String Functions / Regex / Clause", 1667)
 
 
 # ----------------------------------------------------------------------------
