@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Group Sold Products By The Date", 1484)
+    lowercaser("Removing Stars From a String", 2390)
 
 
 # ----------------------------------------------------------------------------
