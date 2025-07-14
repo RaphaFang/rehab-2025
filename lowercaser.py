@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Removing Stars From a String", 2390)
+    lowercaser("Asteroid Collision", 735)
 
 
 # ----------------------------------------------------------------------------

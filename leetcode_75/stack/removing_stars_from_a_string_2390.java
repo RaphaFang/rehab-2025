@@ -3,7 +3,7 @@ package leetcode_75.stack;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Solution {
+public class removing_stars_from_a_string_2390 {
     public String removeStars(String s) {
         Deque<Character> stack = new ArrayDeque<>();
         for (char ch : s.toCharArray()) {
