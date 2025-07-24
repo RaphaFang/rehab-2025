@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Decode String", 394)
+    lowercaser("Number of Atoms", 726)
 
 
 # ----------------------------------------------------------------------------
