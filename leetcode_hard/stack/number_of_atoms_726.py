@@ -55,12 +55,12 @@ class Solution:
         return result
 
 
-        
-
-
-
 ss = Solution()
-ss.countOfAtoms("K4(ON(SO3)2)2")
-ss.countOfAtoms("Mg(OH)2")
+# ss.countOfAtoms("K4(ON(SO3)2)2")
+# ss.countOfAtoms("Mg(OH)2")
 ss.countOfAtoms("(NB3)33")
+# ! 這邊會出問題，是因為我設定的backward 沒有讓數字建立好
+# ! 應該要是雙位數的，但是只建立了一位數，就相成進去了
+# ! 導致數子就算的不對了
+
 # ss.countOfAtoms('H11He49NO35B7N46Li20')
