@@ -4,44 +4,37 @@ class Solution:
     def countOfAtoms(self, formula: str) -> str:
         num_dq, ele_dq = deque(), deque()
 
-        # data cleaning part
-        print(formula)
+        # 1. data cleaning
         formula = re.sub(r'\)(?!\d)', ')1', formula)
-        print(formula)
 
-
+        # 2. rebuild formula for further processing
         for ch in formula:
             if ch.isdigit():
                 rebuild = num_dq.pop()
-                
-                if rebuild == ')':
-                    num_dq.append(rebuild)
 
-                if rebuild == '1' or rebuild == '(' or rebuild == ')':
-                    num_dq.append(int(ch))
+                if str(rebuild).isdigit():
+                    if rebuild == '1':
+                        num_dq.append(int(ch))
+                    else:
+                        num_dq.append(rebuild*10 + int(ch))
                 else:
-                    num_dq.append(rebuild*10 + int(ch)) # 如果先拉出的是多數字，先拉出再放回
+                    num_dq.append(rebuild)
+                    num_dq.append(int(ch))
 
                 if str(num_dq[-1]).isdigit() and ele_dq[-1] == ')':
-                    ele_dq.append('nnn')
+                    ele_dq.append('nnn') # 也不想找為什麼會有例外了（理論上不會發生例外啊），就留著當錯誤情況處理的機制
 
-            elif ch == ')':
-                ele_dq.append(')')
-                num_dq.append(')')
-                
-            elif ch == '(':
-                ele_dq.append('(')
-                num_dq.append('(')
-            
+            elif ch in ('(', ')'):
+                ele_dq.append(ch)
+                num_dq.append(ch)
             elif ch.isupper():
                 ele_dq.append(ch)
                 num_dq.append('1')
-
             elif ch.islower():
                 rebuild = ele_dq.pop()
                 ele_dq.append(rebuild + ch)
         
-        # 這邊還需要有對列，去處理 backward
+        # 3. deal with backward process
         temp_dq = deque()
         backward_holder = deque()
         backward = False
@@ -62,12 +55,13 @@ class Solution:
                 pass
             else:
                 temp_dq.append((ele_dq[i], num_dq[i]))
-        # print(temp_dq)
 
+        # 4. count the data
         r = defaultdict(int) #! 這邊要加入預設數值 (int, str, ...)，不然報錯
         for k, v in temp_dq:
             r[k] += int(v)
 
+        # 5. turn into str
         result = ''
         for n in sorted(r.keys()):
             if int(r[n]) == 1:
@@ -80,7 +74,7 @@ class Solution:
 
 ss = Solution()
 ss.countOfAtoms("Fe(CN)F6")
-# ss.countOfAtoms("(((K4(ON(SO34)2)3(Fe(CN)F6)22)4(Mg(OH)2)10)2(H2O)5)13")
+ss.countOfAtoms("(((K4(ON(SO34)2)3(Fe(CN)F6)22)4(Mg(OH)2)10)2(H2O)5)13")
 # ss.countOfAtoms("Mg(OH)1")
 # ss.countOfAtoms("(Mg)(OH)")
 
