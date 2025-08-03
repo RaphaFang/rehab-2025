@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Dota2 Senate", 649)
+    lowercaser("Delete the Middle Node of a Linked List", 2095)
 
 
 # ----------------------------------------------------------------------------
