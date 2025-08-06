@@ -1,16 +1,18 @@
 def lowercaser(item, quize_id):
-    # the title name need more switching, and replace() only detect and change one item each time
-    # print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
     r = str.maketrans({
         " " : "_",
         "'" : "",
-        "/" : "_"})
+        "/" : "_",
+        "i" : "I"})
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Remove Duplicates from Sorted Array", 26)
+    lowercaser("Remove Duplicates from Sorted Array II", 80)
 
 
+# ----------------------------------------------------------------------------
+    # the title name need more switching, and replace() only detect and change one item each time
+    # print(item.lower().replace(" ", "_") + "_" + str(quize_id) + ".")
 # ----------------------------------------------------------------------------
 # 特定情況中replace還是最快的
 # ! lower().replace() (2-pass): 0.004274042003089562
