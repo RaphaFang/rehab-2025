@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Remove Element", 27)
+    lowercaser("Remove Duplicates from Sorted Array", 26)
 
 
 # ----------------------------------------------------------------------------
