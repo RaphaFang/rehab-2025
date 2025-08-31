@@ -3,11 +3,12 @@ def lowercaser(item, quize_id):
         " " : "_",
         "'" : "",
         "/" : "_",
-        "i" : "I"})
+        # "i" : "I",
+        })
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Remove Duplicates from Sorted Array II", 80)
+    lowercaser("Majority Element", 169)
 
 
 # ----------------------------------------------------------------------------
