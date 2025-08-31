@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Majority Element", 169)
+    lowercaser("Odd Even Linked List", 328)
 
 
 # ----------------------------------------------------------------------------
