@@ -1,4 +1,4 @@
-def lowercaser(item, quize_id):
+def lc(item, quize_id):
     r = str.maketrans({
         " " : "_",
         "'" : "",
@@ -8,7 +8,7 @@ def lowercaser(item, quize_id):
     print(item.lower().translate(r) + "_" + str(quize_id) + ".")
         
 if __name__ == "__main__":
-    lowercaser("Odd Even Linked List", 328)
+    lc("Odd Even Linked List", 328)
 
 
 # ----------------------------------------------------------------------------
